@@ -95,3 +95,7 @@ select * from employes where service in('commercial', 'production')
 select * from employes where service not in('commercial', 'production')
 -- trouvez les employes commercial et salaire < 2000
 select * from employes where service = 'commercial' and salaire <2000;
+-- trouver les employes en production ou sont salaire = 1900 soit salaire =2300
+select * from employes where service ='production' and salaire ='1900' or salaire ='2300'
+-- trouver une personne qui est en production et qui touche 1900 ou bien les personne qui touche 2300
+select * from employes where (service ='production' and salaire ='1900') or salaire ='2300'
