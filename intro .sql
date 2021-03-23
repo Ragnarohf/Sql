@@ -123,4 +123,7 @@ replace into employes(id_employes, prenom, nom, sex , service, date_embauche, sa
 delete from employes where nom ='nina';
 -- suprrimer l'employer du service commercial qui on un id =! 415
 delete from employes where service ='commercial'and id_employes!=415;
---
+-- supprimer les salaries qui on un salaire entre 1500 et 4000  
+delete from employes where salaire between 1500 and 4000;     
+-- equivalent a un truncate
+delete from employes;
