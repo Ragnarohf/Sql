@@ -128,8 +128,9 @@ delete from employes where salaire between 1500 and 4000;
 -- equivalent a un truncate
 delete from employes;
 
-
--- exercice
+-- **************************
+-- Exercice
+-- **************************
 INSERT INTO employes (id_employes, prenom, nom, sex, service, date_embauche, salaire) VALUES
 (350, 'Jean-pierre', 'Laborde', 'm', 'direction', '1999-12-09', 5000),
 (388, 'Clement', 'Gallet', 'm', 'commercial', '2000-01-15', 2300),
@@ -151,3 +152,25 @@ INSERT INTO employes (id_employes, prenom, nom, sex, service, date_embauche, sal
 (900, 'Benoit', 'Lagarde', 'm', 'production', '2013-01-03', 2550),
 (933, 'Emilie', 'Sennard', 'f', 'commercial', '2014-09-11', 1800),
 (990, 'Stephanie', 'Lafaye', 'f', 'assistant', '2015-06-02', 1775);
+-- 1.  Afficher le service de l'employé 547
+select service from employes where id_employes=547;
+-- 2.  Afficher la date d'embauche d'amandine
+select date_embauche from employes where prenom="Amandine"
+-- 3.  Afficher le nbr d'employé du service commercial
+select  count(id_employes) from employes where service ='commercial'
+-- 4.  Afficher la somme des salaires annuels des commerciaux
+select sum(salaire*12) FROM employes where service ='commercial'
+-- 5.  Afficher le salaire moyen par service
+select avg(salaire) from employes group by service;
+-- 6.  Afficher le nbr de recrutements sur l'année 2010 
+select  count(id_employes) from employes where date_embauche between "2010-01-01" and "2010-12-31";     
+
+-- 7.  Augmenter le salaire de tous les employés de +100
+
+-- 8.  Afficher le nombre de services différents
+
+-- 9.  Afficher le nombre d'employés par service
+
+-- 10. Afficher toutes les infos de l'employé du service commercial le mieux payé
+
+-- 11. Afficher l'employé ayant été embauché en dernier
