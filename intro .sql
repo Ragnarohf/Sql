@@ -176,3 +176,7 @@ select * from employes where service='commercial' order by salaire desc limit 0,
 -- 11. Afficher l'employé ayant été embauché en dernier
 select * from employes where date_embauche=(select max(date_embauche) from employes);
 select * from employes order by date_embauche desc limit 0,1;
+
+-----------------------------------------------------------------
+--creation des sous tables
+create view vue_femme as select prenom, nom, sex from employes where sex='f';
