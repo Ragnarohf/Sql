@@ -164,13 +164,13 @@ select sum(salaire*12) FROM employes where service ='commercial'
 select avg(salaire) from employes group by service;
 -- 6.  Afficher le nbr de recrutements sur l'année 2010 
 select  count(id_employes) from employes where date_embauche between "2010-01-01" and "2010-12-31";     
-
 -- 7.  Augmenter le salaire de tous les employés de +100
-
+update employes set salaire = salaire + 100;
 -- 8.  Afficher le nombre de services différents
-
+select COUNT(distinct service) from employes;
 -- 9.  Afficher le nombre d'employés par service
-
+select service, count(id_employes) from employes group by service;
 -- 10. Afficher toutes les infos de l'employé du service commercial le mieux payé
-
+select * from employes where salaire = (select MAX(salaire) from employes) ;
 -- 11. Afficher l'employé ayant été embauché en dernier
+select * from employes where date_embauche=(select max(date_embauche) from employes);
