@@ -171,6 +171,8 @@ select COUNT(distinct service) from employes;
 -- 9.  Afficher le nombre d'employés par service
 select service, count(id_employes) from employes group by service;
 -- 10. Afficher toutes les infos de l'employé du service commercial le mieux payé
-select * from employes where salaire = (select MAX(salaire) from employes) ;
+select * from employes where salaire = (select max(salaire) from employes) ;
+select * from employes order by salaire desc limit 0,1;
 -- 11. Afficher l'employé ayant été embauché en dernier
 select * from employes where date_embauche=(select max(date_embauche) from employes);
+select * from employes order by date_embauche desc limit 0,1;
