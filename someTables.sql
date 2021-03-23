@@ -32,7 +32,7 @@ table: livre
 |      103 | ALPHONSE DAUDET   | Le Petit chose          |
 |      104 | ALEXANDRE DUMAS   | La Reine Margot         |
 |      105 | ALEXANDRE DUMAS   | Les Trois Mousquetaires |
-
++------------+----------+-----------+--------------+-----+
 
 --de a a z
 create database if not exists bibliotheque
