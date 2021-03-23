@@ -110,3 +110,7 @@ insert into employes VALUES(144, 'gg', 'm','f','f', null, 1455)
 
 --update mettres a jour la table ;
 update employes set salaire= 9000 where service ='direction';
+-- update les salaires de toutes les femmes a 2500
+update employes set salaire =2500 where sex = 'f';
+-- update mettre a jour la date d'embauche a aujourdh'ui et salaire a 500;
+update employes set salaire=500, date_embauche="22021-1-1" where id_employes=411;
