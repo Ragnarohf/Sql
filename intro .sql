@@ -89,3 +89,7 @@ select round(avg(salaire),2) from employes;
 select count(id_employes) from employes 
 --compter le nombre d'occurence dans ma base d'hommes
 select count(id_employes) from employes where sex ='m';
+-- trouver les employes qui bosser en commercial et en production
+select * from employes where service in('commercial', 'production')
+-- trouver les employes qui bosse sauf en commercial et en production
+select * from employes where service not in('commercial', 'production')
