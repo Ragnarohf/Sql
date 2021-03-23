@@ -108,3 +108,5 @@ insert into employes(id_employes, nom, service, prenom)VALUES (411, 'nina', 'pro
 -- rajouter des valeurs sans indiquer les clés
 insert into employes VALUES(144, 'gg', 'm','f','f', null, 1455)
 
+--update mettres a jour la table ;
+update employes set salaire= 9000 where service ='direction';
