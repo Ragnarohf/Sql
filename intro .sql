@@ -93,3 +93,5 @@ select count(id_employes) from employes where sex ='m';
 select * from employes where service in('commercial', 'production')
 -- trouver les employes qui bosse sauf en commercial et en production
 select * from employes where service not in('commercial', 'production')
+-- trouvez les employes commercial et salaire < 2000
+select * from employes where service = 'commercial' and salaire <2000;
