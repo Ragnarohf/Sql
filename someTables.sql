@@ -96,3 +96,25 @@ INSERT INTO emprunt(id_emprunt,id_livre,id_abonne, date_sortie, date_rendu) VALU
 (6,105,2,'2012-03-20','2011-12-26'),
 (7,105,3,'2013-06-13',null),
 (8,100,2,'2013-06-15',null);
+
+--afficher id aboné laura
+select id_abonne from abonne where prenom='laura';
+
+--l'abonne de id=2 est venu emprunter le livre a quelle date
+select date_sortie from emprunt where id_abonne=2;
+
+-- combien d'emprunt on été effectué en tout 
+select count(id_emprunt) from emprunt;
+
+--combien de livre sont sorti le 2011-12-19
+select count(id_emprunt) from emprunt where date_sortie="2011-12-19";
+
+--quel est l'auteur du livre "une vie";
+select auteur from livre where titre ='une vie';
+
+-- de combien de livre d'alexandre dumais dispose t-on?
+select count(id_livre) from livre where auteur = "ALEXANDRE DUMAS";
+
+--quel id_livre est le plus emprunté
+select id_livre from emprunt where date_sortie=(select max(date_sortie)from emprunt);
+select id_livre, count(date_sortie) from emprunt group by id_livre;
