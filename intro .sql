@@ -99,3 +99,8 @@ select * from employes where service = 'commercial' and salaire <2000;
 select * from employes where service ='production' and salaire ='1900' or salaire ='2300'
 -- trouver une personne qui est en production et qui touche 1900 ou bien les personne qui touche 2300
 select * from employes where (service ='production' and salaire ='1900') or salaire ='2300'
+-- le nombre de personne par services
+select service, count(id_employes) from employes group by service;
+-- affciher les services qui sont superieur a une personne
+select service, count(id_employes) as number from employes group by service having number > 1;
+
