@@ -180,3 +180,9 @@ select * from employes order by date_embauche desc limit 0,1;
 -----------------------------------------------------------------
 --creation des sous tables
 create view vue_femme as select prenom, nom, sex from employes where sex='f';
+-- creation d'une vue homme
+create view homme as select nom, prenom, salaire from employes where sex='m';
+--update salaire des hommes dans la table 
+update homme set salaire=7000 where prenom="jean-pierre";
+--drop de la view vue_homme
+drop view vue_homme;
