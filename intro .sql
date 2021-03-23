@@ -120,3 +120,7 @@ update employes set salaire =0;
 replace into employes(id_employes, prenom, nom, sex , service, date_embauche, salaire)values(222,'test', 'test', 'm', 'marketing','2010-07-05',2514);
 
 -- delete
+delete from employes where nom ='nina';
+-- suprrimer l'employer du service commercial qui on un id =! 415
+delete from employes where service ='commercial'and id_employes!=415;
+--
