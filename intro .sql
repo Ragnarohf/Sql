@@ -114,3 +114,9 @@ update employes set salaire= 9000 where service ='direction';
 update employes set salaire =2500 where sex = 'f';
 -- update mettre a jour la date d'embauche a aujourdh'ui et salaire a 500;
 update employes set salaire=500, date_embauche="22021-1-1" where id_employes=411;
+-- mettre tout les salaires a 0
+update employes set salaire =0;
+-- creer un id si il le trouve pas et remplace si il le trouve
+replace into employes(id_employes, prenom, nom, sex , service, date_embauche, salaire)values(222,'test', 'test', 'm', 'marketing','2010-07-05',2514);
+
+-- delete
