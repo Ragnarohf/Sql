@@ -85,3 +85,7 @@ SELECT ROUND(salaire) FROM employes;
 select round(avg(salaire)) from employes; 
 --arondir la moyennes de salaires avec deux chiffres 
 select round(avg(salaire),2) from employes;
+-- compter le nombre d'occurence dans ma base
+select count(id_employes) from employes 
+--compter le nombre d'occurence dans ma base d'hommes
+select count(id_employes) from employes where sex ='m';
