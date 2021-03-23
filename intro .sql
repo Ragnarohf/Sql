@@ -77,3 +77,11 @@ SELECT SUM(salaire*12) FROM employes;
 SELECT MAX(salaire) FROM employes;
 --afficher le salaire minimum des employes
 SELECT min(salaire) FROM employes;
+-- moyennes des salaires
+select avg(salaire) from employes; 
+-- arondir les salaires
+SELECT ROUND(salaire) FROM employes;
+--arondir la moyennes de salaires
+select round(avg(salaire)) from employes; 
+--arondir la moyennes de salaires avec deux chiffres 
+select round(avg(salaire),2) from employes;
