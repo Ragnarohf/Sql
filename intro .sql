@@ -103,4 +103,8 @@ select * from employes where (service ='production' and salaire ='1900') or sala
 select service, count(id_employes) from employes group by service;
 -- affciher les services qui sont superieur a une personne
 select service, count(id_employes) as number from employes group by service having number > 1;
+-- rajouter une ligne sans avoir tout les champs, seul l'id est obligatoire
+insert into employes(id_employes, nom, service, prenom)VALUES (411, 'nina', 'production', 'tot');
+-- rajouter des valeurs sans indiquer les clés
+insert into employes VALUES(144, 'gg', 'm','f','f', null, 1455)
 
