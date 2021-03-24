@@ -44,3 +44,11 @@ select id_abonne from emprunt where date_sortie in (select max(date_sortie)from 
 --interneon recupere le milieu des deux table lié par les PK
 -- externes left join il prend tout et absorbe la premiere table
 -- externes right join il prend tout et absorbe la seconde table
+
+-- date de sortie et de rendu pour l'abonné guillaume
+-- emprunt => e table abonne => a
+select e.date_sortie, e.date_rendu, a.prenom-- ce que je souhaite afficher
+from abonne a --la 1ere table d'ou viennent els informations
+inner join emprunt e -- lier la premiere table a la seconde table
+on a.id_abonne=e.id_abonne --la jointure qui lie les deux champs communs dans les 2 nom
+where a.prenom='guillaume';--conditions pas obligatoire supplementaire sur le prenom
