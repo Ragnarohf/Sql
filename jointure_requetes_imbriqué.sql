@@ -5,4 +5,9 @@ select id_abonne, count( date_sortie) from emprunt group by id_abonne order by c
 -- recuperer les livres pas rendu 
 select id_livre from emprunt where date_rendu is null;
 -- recuperer les titres des livres pas rendu 
-select titre from livre where id_livre  in(select id_livre from emprunt where date_rendu is null);
+select titre from livre where id_livre in (select id_livre from emprunt where date_rendu is null);
+
+-- afficher le numero des livres que chloé a emprunté
+select id_livre from emprunt where id_abonne in (select id_abonne from abonne where prenom="Chloe");
+
+--
