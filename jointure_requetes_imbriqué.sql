@@ -23,3 +23,8 @@ select titre from livre where id_livre in
 (select id_livre from emprunt where id_abonne =
 (select id_abonne from abonne where prenom='chloe'));
 
+-- afficher les titres des livres que cholé n'a pas emprunté
+select titre from livre where id_livre not in
+(select id_livre from emprunt where id_abonne =
+(select id_abonne from abonne where prenom='chloe'));
+
