@@ -52,3 +52,35 @@ from abonne a --la 1ere table d'ou viennent els informations
 inner join emprunt e -- lier la premiere table a la seconde table
 on a.id_abonne=e.id_abonne --la jointure qui lie les deux champs communs dans les 2 nom
 where a.prenom='guillaume';--conditions pas obligatoire supplementaire sur le prenom
+
+-- afficher les titres, dates de sorties et de rendu des livre ecrit par alphonse daudet
+select e.date_sortie, e.date_rendu, l.titre
+from livre l
+inner join emprunt e
+on l.id_livre= e.id_livre
+where l.auteur = "alphonse daudet"
+
+--qui (prenom ) a emprunté  "une vie" sur 2011
+select a.prenom
+from abonne a
+inner join emprunt e
+on a.id_abonne=e.id_abonne
+inner join livre l
+on e.id_livre= l.id_livre
+where l.titre= 'une vie '
+and e.date_sortie like '2011%'
+
+-- le nombre de livre emprunté par chaque prenom
+select a.prenom, count(e.id_livre) 
+FROM abonne a 
+inner join emprunt e
+on a.id_abonne =e.id_abonne
+group by e.id_abonne 
+
+-- qui (prenom) a emprunté quoi (titre) et a quelle date (date_sortie)
+select a.prenom, l.titre, e.date_sortie
+from abonne a
+inner join emprunt e
+on a.id_abonne=e.id_abonne
+inner join livre l
+on e.id_livre=l.id_livre
