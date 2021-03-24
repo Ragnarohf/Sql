@@ -40,3 +40,7 @@ select prenom from abonne where id_abonne in(
 select id_abonne from emprunt where date_sortie in (select max(date_sortie)from emprunt))
 
 
+--jointures internes et externes
+--interneon recupere le milieu des deux table lié par les PK
+-- externes left join il prend tout et absorbe la premiere table
+-- externes right join il prend tout et absorbe la seconde table
