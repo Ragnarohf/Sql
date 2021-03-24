@@ -90,3 +90,24 @@ select a.prenom, e.id_livre
 from abonne a
 inner join emprunt e
 on a.id_abonne=e.id_abonne
+
+--inserez un prenom
+use bibliotheque;
+INSERT INTO abonne( prenom) VALUES 
+('Michel')
+
+
+-- afficher les prenoms des abonnes avec les id_livres qu'ils on emprunté en rajoutant 
+select a.prenom, e.id_livre
+from abonne a
+left join emprunt e
+on a.id_abonne=e.id_abonne
+
+-- supprimer un id_livre
+delete from livre where id_livre=100;
+
+--
+select emprunt .id_emprunt, livre.titre 
+from emprunt
+left join livre
+on emprunt.id_livre= livre.id_livre
