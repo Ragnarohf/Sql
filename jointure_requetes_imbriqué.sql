@@ -28,3 +28,15 @@ select titre from livre where id_livre not in
 (select id_livre from emprunt where id_abonne =
 (select id_abonne from abonne where prenom='chloe'));
 
+--combien de livres benoit a emprunté a la bibilotheques
+select count(id_emprunt) from emprunt where id_abonne in
+(select id_abonne from abonne where prenom='benoit');
+
+-- quel est le prenom de la personne qui a emprunte le plus de livre a la bibliotheque
+select prenom from abonne where id_abonne =
+(select id_abonne from emprunt group by id_abonne order by count(date_sortie) desc limit 0,1)
+
+select prenom from abonne where id_abonne in(
+select id_abonne from emprunt where date_sortie in (select max(date_sortie)from emprunt))
+
+
