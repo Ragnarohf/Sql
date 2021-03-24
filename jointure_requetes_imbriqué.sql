@@ -84,3 +84,9 @@ inner join emprunt e
 on a.id_abonne=e.id_abonne
 inner join livre l
 on e.id_livre=l.id_livre
+
+-- afficher les prenoms des abonnes avec les id_livres qu'ils on emprunté
+select a.prenom, e.id_livre
+from abonne a
+inner join emprunt e
+on a.id_abonne=e.id_abonne
