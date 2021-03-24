@@ -118,3 +118,4 @@ select count(id_livre) from livre where auteur = "ALEXANDRE DUMAS";
 --quel id_livre est le plus emprunté
 select id_livre from emprunt where date_sortie=(select max(date_sortie)from emprunt);
 select id_livre, count(date_sortie) from emprunt group by id_livre;
+
